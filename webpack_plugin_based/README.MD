@@ -1,8 +1,8 @@
 # Webpack Plugin Version
 
 ## Usage
-
-Add as plugin to webpack. 
+### Script
+Add as plugin for webpack. 
 
 i.e.
 ```js
@@ -38,3 +38,7 @@ module.exports = merge(common, {
 Pugin has two params: ```outputFilename``` and ```proxyString```
 
 It exports the json file into the Webpack output dir. 
+
+### Component
+
+Just include it in your Page. It fetch the file from the server and include it.
