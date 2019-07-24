@@ -167,13 +167,15 @@ class LicenseExtractor {
                 const license = this.extractLicenseFromPackage(packageJson)
                 const author = this.extractAuthorFromPackage(packageJson)
                 const licenseText = await this.resolveLicense(nodeModulePath, repositoryUrl).catch(() => '')
-                licenses.push({
-                    name: packageJson.name,
-                    version: packageJson.version,
-                    author,
-                    license,
-                    licenseText,
-                })
+                if(packageJson.name && packageJson.version && license){
+                    licenses.push({
+                        name: packageJson.name,
+                        version: packageJson.version,
+                        author,
+                        license,
+                        licenseText,
+                    })
+                }
             }),
         ))
         const licensesString = JSON.stringify(licenses)
