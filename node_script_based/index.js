@@ -244,5 +244,5 @@ program
   .option('-p, --proxy-string [proxy]', 'Proxy String if needed')
   .parse(process.argv);
 
-const extractor = new LicenseExtractor(program);
+const extractor = new LicenseExtractor(program.opts());
 extractor.extract();
